@@ -814,19 +814,19 @@ td, th {
         // ============================================
         // PRODUCTS DATA
         // ============================================
-        const products = [
-            "TV Unit",
-            "Mandir",
-            "Round Shape Furniture",
-            "3 Sitter Sofa",
-            "Openable Wardrobe",
-            "Sliding Wardrobe",
-            "Dewan with Hydraulic",
-            "Inside Look of Wardrobe",
-            "Coastal Bed",
-            "Lounger with Storage",
-            "Full Hydraulic Bed with Headboard Cushion"
-        ];
+       const products = [
+  { name: "TV Unit", image: "images/tv-unit-1.jpg" },
+  { name: "Mandir", image: "images/mandir-1.jpg" },
+  { name: "Round Shape Furniture", image: "images/round-furniture-1.jpg" },
+  { name: "3 Sitter Sofa", image: "images/sofa-3-seater-1.jpg" },
+  { name: "Openable Wardrobe", image: "images/wardrobe-openable-1.jpg" },
+  { name: "Sliding Wardrobe", image: "images/wardrobe-sliding-1.jpg" },
+  { name: "Dewan with Hydraulic", image: "images/dewan-hydraulic-1.jpg" },
+  { name: "Inside Look of Wardrobe", image: "images/wardrobe-inside-1.jpg" },
+  { name: "Coastal Bed", image: "images/coastal-bed-1.jpg" },
+  { name: "Lounger with Storage", image: "images/lounger-storage-1.jpg" },
+  { name: "Full Hydraulic Bed with Headboard Cushion", image: "images/hydraulic-bed-1.jpg" }
+];
 
         // ============================================
         // WHATSAPP FUNCTIONS
@@ -868,33 +868,21 @@ td, th {
          * @param {number} index - The index of the product
          * @returns {string} HTML string for the product card
          */
-        function createProductCard(productName, index) {
+        function createProductCard(product, index) {
             return `
                 <div class="product-card" style="animation: fadeUp 0.6s ease-out ${index * 0.1}s forwards; opacity: 0;">
                     <!-- Image Gallery -->
                     <div class="product-images">
-                        <div class="image-placeholder">
-                            <i data-lucide="image"></i>
-                            <span>Image 1</span>
-                        </div>
-                        <div class="image-placeholder">
-                            <i data-lucide="image"></i>
-                            <span>Image 2</span>
-                        </div>
-                        <div class="image-placeholder">
-                            <i data-lucide="image"></i>
-                            <span>Image 3</span>
-                        </div>
-                    </div>
-
+  <img src="${product.image}" alt="${product.name}">
+</div>
                     <!-- Product Info -->
                     <div class="product-info">
-                        <h3 class="product-name">${productName}</h3>
-                        <button class="whatsapp-btn" onclick="openWhatsApp('${productName}')">
+                      <h3 class="product-name">${product.name}</h3>
+<button class="whatsapp-btn" onclick="openWhatsApp('${product.name}')">
+
                             <i data-lucide="message-circle"></i>
                             Book Now on WhatsApp
                         </button>
-                    </div>
                 </div>
             `;
         }
@@ -935,3 +923,4 @@ td, th {
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4581d6a58cf94e929fad52deda295622","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
+
